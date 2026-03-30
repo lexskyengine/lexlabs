@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Bilibili Skin",
+  "version": "1.0",
+  "description": "为 B 站网页版添加两侧颜色/图片主题，支持按页面侧边像素裁剪并镜像右侧",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "permissions": ["storage", "activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.bilibili.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

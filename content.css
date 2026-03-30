@@ -1,0 +1,24 @@
+/* body 背景控制（若使用整页背景） */
+body {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center center !important;
+}
+
+/* 中间主体透明度与模糊（使用 CSS 变量由 content.js 控制） */
+#internationalHeader, .international-page-wrap, #app {
+  background-color: rgba(255, 255, 255, var(--bili-skin-opacity, 0.9)) !important;
+  backdrop-filter: blur(var(--bili-skin-blur, 5px)) !important;
+}
+
+/* 屏蔽原生冲突背景 */
+.bili-page-header {
+  background-color: transparent !important;
+}
+
+/* 左右侧背景层样式 */
+.bili-skin-side {
+  pointer-events: none !important;
+  user-select: none !important;
+}
